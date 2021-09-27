@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using CGLabPlatform;
 
-namespace nurbs
+namespace nurbs.Topology
 {
     public class Face : IComparable<Face>, IComparer<Face>
     {

@@ -2,12 +2,14 @@
 using System.Drawing;
 using System.Windows.Forms;
 using CGLabPlatform;
+using nurbs.Data;
+using nurbs.Topology;
 
 namespace nurbs
 {
     public enum Shading { Flat, Gouraud };
 
-    public abstract class Lab : GFXApplicationTemplate<Lab>
+    public abstract class NurbsSurfaceApp : GFXApplicationTemplate<NurbsSurfaceApp>
     {
 
         [DisplayTextBoxProperty(Default: "", Name: "Point")]
@@ -104,7 +106,7 @@ namespace nurbs
 
         [STAThread] static void Main() { RunApplication(); }
 
-        private readonly LightSource lamp = new LightSource();
+        private readonly Lamp lamp = new Lamp();
         private readonly NurbsSurface nurbs = new NurbsSurface();
         private readonly Grid grid = new Grid();
 
@@ -184,7 +186,7 @@ namespace nurbs
             var lampPosition = new DVector3(LightPosition.X, -LightPosition.Y, LightPosition.Z);
 
             var light = StateSaver.LightSettingsInstance;
-            var updateInstance = StateSaver.UpdateInstance;
+            var figureInstance = StateSaver.FigureInstance;
             var shadeInstance = StateSaver.ShadeInstance;
 
             lamp.LocalPosition = lampPosition / autoscale;
@@ -213,7 +215,7 @@ namespace nurbs
             nurbs.Update(centerPosition + shift, angles, AxisScale * Scale * autoscale);
             grid.Update(centerPosition + shift, angles, AxisScale * Scale * autoscale);
 
-            SaveState(updateInstance);
+            SaveState(figureInstance);
             light.Position = lamp.GlobalPosition;
             SaveShade(light);
             if (rebuild || update || reshade) SaveShade(shadeInstance);
@@ -239,7 +241,7 @@ namespace nurbs
 
         private bool NeedUpdate()
         {
-            var update = StateSaver.UpdateInstance;
+            var update = StateSaver.FigureInstance;
             return !update.CenterPoint.ApproxEqual(CenterPoint) ||
                    !update.AxisScale.ApproxEqual(AxisScale) ||
                    Math.Abs(update.AngleX - AngleX) > AngleTolerance ||
@@ -264,7 +266,7 @@ namespace nurbs
                    Math.Abs(shade.p - p) > Tolerance ||
                    Math.Abs(shade.K - K) > Tolerance;
         }
-        private void SaveState(UpdateData update)
+        private void SaveState(FigureData update)
         {
             update.Scale = Scale;
             update.CenterPoint = CenterPoint;

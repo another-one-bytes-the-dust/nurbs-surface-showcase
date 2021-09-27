@@ -1,9 +1,10 @@
 ﻿using System.Drawing;
 using CGLabPlatform;
+using nurbs.Data;
 
-namespace nurbs
+namespace nurbs.Topology
 {
-    public class LightSource : AbstractFigure
+    public class Lamp : AbstractFigure
     {
         public DVector3 LocalPosition;
         public DVector3 GlobalPosition;

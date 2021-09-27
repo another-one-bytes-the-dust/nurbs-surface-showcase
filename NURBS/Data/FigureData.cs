@@ -1,8 +1,8 @@
 ﻿using CGLabPlatform;
 
-namespace nurbs
+namespace nurbs.Data
 {
-    public class UpdateData
+    public class FigureData
     {
         public double Scale { get; set; }
         public DVector3 CenterPoint { get; set; } = DVector3.Zero;

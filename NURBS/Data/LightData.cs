@@ -1,6 +1,6 @@
 ﻿using CGLabPlatform;
 
-namespace nurbs
+namespace nurbs.Data
 {
     public class LightData
     {

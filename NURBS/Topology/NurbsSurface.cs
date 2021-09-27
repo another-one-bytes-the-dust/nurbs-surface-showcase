@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
 using CGLabPlatform;
+using nurbs.Data;
 
-namespace nurbs
+namespace nurbs.Topology
 {
     class NurbsSurface : Surface
     {

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
 using CGLabPlatform;
+using nurbs.Utilities;
 
-namespace nurbs
+namespace nurbs.Topology
 {
     public abstract class AbstractFigure
     {

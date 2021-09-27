@@ -70,20 +70,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFigure.cs" />
-    <Compile Include="Face.cs" />
-    <Compile Include="Grid.cs" />
-    <Compile Include="LightData.cs" />
-    <Compile Include="LightSource.cs" />
-    <Compile Include="NurbsSurface.cs" />
+    <Compile Include="Data\FigureData.cs" />
+    <Compile Include="Data\LightData.cs" />
+    <Compile Include="Data\StateSaver.cs" />
+    <Compile Include="Topology\AbstractFigure.cs" />
+    <Compile Include="Topology\Face.cs" />
+    <Compile Include="Topology\Grid.cs" />
+    <Compile Include="Topology\Lamp.cs" />
+    <Compile Include="Topology\NurbsSurface.cs" />
+    <Compile Include="Topology\Surface.cs" />
     <Compile Include="Parser.cs" />
-    <Compile Include="StateSaver.cs" />
-    <Compile Include="Surface.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Transformer.cs" />
-    <Compile Include="UpdateData.cs" />
-    <Compile Include="Utilities.cs" />
-    <Compile Include="Vertex.cs" />
+    <Compile Include="NurbsSurfaceApp.cs" />
+    <Compile Include="Topology\Vertex.cs" />
+    <Compile Include="Utilities\Draw.cs" />
+    <Compile Include="Utilities\Transformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

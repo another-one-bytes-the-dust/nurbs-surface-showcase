@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using CGLabPlatform;
 
-namespace nurbs
+namespace nurbs.Topology
 {
     public abstract class Surface : AbstractFigure
     {

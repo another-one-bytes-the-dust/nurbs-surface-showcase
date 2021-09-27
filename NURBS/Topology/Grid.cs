@@ -1,7 +1,7 @@
 ﻿using System;
 using CGLabPlatform;
 
-namespace nurbs
+namespace nurbs.Topology
 {
     public class Grid : Surface
     {
