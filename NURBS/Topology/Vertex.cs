@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using CGLabPlatform;
+using nurbs.Data;
 
-namespace nurbs
+namespace nurbs.Topology
 {
     public class Vertex
     {
